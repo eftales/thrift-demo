@@ -12,7 +12,7 @@ using namespace ::apache::thrift::protocol;
 using namespace ::apache::thrift::transport;
 using namespace ::apache::thrift::server;
 
-using boost::shared_ptr;
+using namespace std;
 
 class ServHandler : virtual public ServIf {
  public:

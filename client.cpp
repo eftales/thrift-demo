@@ -1,7 +1,9 @@
-#include "gen-cpp/Serv.h"
+#include "ConServiceThrift/ConService.h"
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/protocol/TBinaryProtocol.h>
+#include<iostream>
+#include<stdio.h>
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
@@ -15,13 +17,13 @@ int main(int argc, char **argv) {
     transport->open();
 
     // 我们的代码写在这里
-    Student s;
-    s.sno = 123;
-    s.sname = "xiaoshe";
-    s.ssex = 1;
-    s.sage = 30;   
-    ServClient client(protocol);
-    client.put(s);
+    ConServiceClient client(protocol);
+    std::map<std::string, DeviceMSGThrift>  _return;
+    client.getTopo(_return);
+    for(auto dev:_return){
+        std::cout<<dev.first<<std::endl;
+        printf("%d\n",dev.second.type);
+    }
     
     transport->close();
     return 0;

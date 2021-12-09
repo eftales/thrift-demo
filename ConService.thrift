@@ -31,7 +31,7 @@
 
 */
 
-typedef string MAC
+typedef string MACString
 struct DeviceMSGThrift{
     1: i8 type,
     2: i8 state,
@@ -49,7 +49,7 @@ struct DeviceMSGThrift{
 
 }
 
-typedef string ColonyID
+typedef string ColonyIDString
 struct SafeParamThrift{
     1: i8 checkMethod,
     2: i8 checkAlg,
@@ -62,8 +62,8 @@ struct SafeParamThrift{
 
 
 service ConService{
-    map<MAC,DeviceMSGThrift> getTopo(),
-    map<ColonyID,SafeParamThrift> getSafeParam(),
+    map<MACString,DeviceMSGThrift> getTopo(),
+    map<ColonyIDString,SafeParamThrift> getSafeParam(),
     i8 getCMode();
     i8 setCMode(1:i8 mode);
 }

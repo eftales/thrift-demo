@@ -25,13 +25,13 @@ class ConServiceHandler : virtual public ConServiceIf {
     topo[macStr] = deviceMSG;
   }
 
-  void getTopo(std::map<std::string, DeviceMSGThrift> & _return) {
+  void getTopo(std::map<MACString, DeviceMSGThrift> & _return) {
     // Your implementation goes here
     _return = topo;
     printf("getTopo\n");
   }
 
-  void getSafeParam(std::map<ColonyID, SafeParamThrift> & _return) {
+  void getSafeParam(std::map<ColonyIDString, SafeParamThrift> & _return) {
     // Your implementation goes here
     printf("getSafeParam\n");
   }

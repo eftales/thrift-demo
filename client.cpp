@@ -11,7 +11,7 @@ using namespace apache::thrift::transport;
 
 
 int main(int argc, char **argv) {
-    std::shared_ptr<TSocket> socket(new TSocket("localhost", 9090)); //注意此处的ip和端口
+    std::shared_ptr<TSocket> socket(new TSocket("localhost", 2022)); //注意此处的ip和端口
     std::shared_ptr<TTransport> transport(new TBufferedTransport(socket));
     std::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
     transport->open();

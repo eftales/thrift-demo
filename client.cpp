@@ -21,8 +21,15 @@ int main(int argc, char **argv) {
     std::map<std::string, DeviceMSGThrift>  _return;
     client.getTopo(_return);
     for(auto dev:_return){
-        std::cout<<dev.first<<std::endl;
-        printf("%d\n",dev.second.type);
+        std::cout<<"DeviceID: "<<dev.first<<std::endl;
+        printf("type:%d state:%d authTime:%d dhcpTime:%d ip:%s colonyID:%s \nswCapability:%d forwardCapability:%d linkNum:%d\n",
+            dev.second.type,dev.second.state,dev.second.authTime,dev.second.dhcpTime,dev.second.ip.c_str(),
+            dev.second.colonyID.c_str(),dev.second.swCapability,dev.second.forwardCapability,dev.second.linkNum);
+
+        printf("peers:\n");
+        for(auto peer:dev.second.peers){
+            std::cout<<peer<<std::endl;
+        }
     }
     
     transport->close();

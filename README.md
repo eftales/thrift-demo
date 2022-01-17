@@ -1,7 +1,15 @@
 # thrift demo
 ## install thrift
+### ubuntu 20.04
+ubuntu 20.04 可以通过 apt 直接安装
 
-ubuntu20.04上只能安装较新版本的 thrift，这里以 0.14.2 为例。0.9.2 只能在 ubuntu 16.04 上安装成功。
+```
+sudo apt install libthrift-dev thrift-compiler -y
+```
+
+
+### ubuntu 16.04
+ubuntu 16.04 需要自行下载源码编译安装
 
 ```
 sudo apt-get install automake bison flex g++ git libboost-all-dev libevent-dev libssl-dev libtool make pkg-config

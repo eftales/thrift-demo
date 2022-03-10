@@ -28,7 +28,9 @@ int main(int argc, char **argv) {
 
         printf("peers:\n");
         for(auto peer:dev.second.peers){
-            std::cout<<peer<<std::endl;
+            for(auto onePeer:peer){
+                std::cout<<onePeer<<std::endl;
+            }
         }
     }
     

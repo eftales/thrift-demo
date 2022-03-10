@@ -42,7 +42,7 @@ struct DeviceMSGThrift{
     7: i8 swCapability,
     8: i8 forwardCapability,
     9: i32 linkNum,
-    10: list<string> peers, 
+    10: list<list<string>> peers, 
     11: list<i8> portCapability,
     12: list<i8> portState,
     13: list<i8> portRate,
